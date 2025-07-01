@@ -209,33 +209,7 @@ pub mod otto_referral_rewards {
         Ok(())
     }
 
-    /// Calculate dynamic reward based on holdings and purchase volume
-    pub fn calculate_dynamic_reward(
-        base_rate: u16,
-        holding_ratio: u16,
-        referrer_holdings: u64,
-        purchase_amount: u64,
-        min_holdings: u64,
-    ) -> u64 {
-        // Base reward calculation
-        let base_reward = (purchase_amount as u128 * base_rate as u128 / 10_000) as u64;
-        
-        // Apply holding ratio penalty (if user sold tokens)
-        let holding_adjusted_reward = (base_reward as u128 * holding_ratio as u128 / 10_000) as u64;
-        
-        // Apply holdings multiplier (more holdings = higher rewards)
-        let holdings_multiplier = if referrer_holdings >= min_holdings * 10 {
-            15000 // 1.5x for 10x minimum holdings
-        } else if referrer_holdings >= min_holdings * 5 {
-            12500 // 1.25x for 5x minimum holdings
-        } else if referrer_holdings >= min_holdings * 2 {
-            11000 // 1.1x for 2x minimum holdings
-        } else {
-            10000 // 1x for minimum holdings
-        };
-        
-        (holding_adjusted_reward as u128 * holdings_multiplier / 10_000) as u64
-    }
+
 
     /// Update user tier based on token holdings
     pub fn update_tier(ctx: Context<UpdateTier>) -> Result<()> {
@@ -348,6 +322,34 @@ pub mod otto_referral_rewards {
 
         Ok(())
     }
+}
+
+/// Calculate dynamic reward based on holdings and purchase volume
+pub fn calculate_dynamic_reward(
+    base_rate: u16,
+    holding_ratio: u16,
+    referrer_holdings: u64,
+    purchase_amount: u64,
+    min_holdings: u64,
+) -> u64 {
+    // Base reward calculation
+    let base_reward = (purchase_amount as u128 * base_rate as u128 / 10_000) as u64;
+    
+    // Apply holding ratio penalty (if user sold tokens)
+    let holding_adjusted_reward = (base_reward as u128 * holding_ratio as u128 / 10_000) as u64;
+    
+    // Apply holdings multiplier (more holdings = higher rewards)
+    let holdings_multiplier = if referrer_holdings >= min_holdings * 10 {
+        15000 // 1.5x for 10x minimum holdings
+    } else if referrer_holdings >= min_holdings * 5 {
+        12500 // 1.25x for 5x minimum holdings
+    } else if referrer_holdings >= min_holdings * 2 {
+        11000 // 1.1x for 2x minimum holdings
+    } else {
+        10000 // 1x for minimum holdings
+    };
+    
+    (holding_adjusted_reward as u128 * holdings_multiplier / 10_000) as u64
 }
 
 #[derive(Accounts)]
@@ -510,9 +512,11 @@ pub struct ClaimRewards<'info> {
     )]
     pub purchase_account: Account<'info, PurchaseAccount>,
 
+    pub otto_token_mint: Account<'info, Mint>,
+
     #[account(
         mut,
-        associated_token::mint = program_state.otto_token_mint,
+        associated_token::mint = otto_token_mint,
         associated_token::authority = program_state,
     )]
     pub rewards_pool: Account<'info, TokenAccount>,
@@ -520,7 +524,7 @@ pub struct ClaimRewards<'info> {
     #[account(
         init_if_needed,
         payer = buyer,
-        associated_token::mint = program_state.otto_token_mint,
+        associated_token::mint = otto_token_mint,
         associated_token::authority = buyer,
     )]
     pub buyer_token_account: Account<'info, TokenAccount>,
