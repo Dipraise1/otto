@@ -1,14 +1,45 @@
-User-agent: Googlebot
+User-agent: *
 Allow: /
 
-User-agent: Bingbot
+# Sitemap
+Sitemap: https://otto.fun/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Specific pages
+Allow: /dashboard
+Allow: /profile
+
+# Block sensitive or unnecessary paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /*?*
+Disallow: /src/
+
+# Allow popular social media crawlers
+User-agent: facebookexternalhit
 Allow: /
 
 User-agent: Twitterbot
 Allow: /
 
-User-agent: facebookexternalhit
+User-agent: LinkedInBot
 Allow: /
 
-User-agent: *
+User-agent: WhatsApp
 Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# Block spam bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

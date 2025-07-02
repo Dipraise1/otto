@@ -1,0 +1,117 @@
+{
+  "name": "OTTO - Solana's Hottest Meme Coin",
+  "short_name": "OTTO",
+  "description": "OTTO is the playful otter meme coin on Solana delivering lightning-fast transactions, zero fees, and otter-ly amazing rewards.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#06b6d4",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["finance", "cryptocurrency", "defi"],
+  "icons": [
+    {
+      "src": "/ottoicon.jpg",
+      "sizes": "57x57",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ottoicon.jpg",
+      "sizes": "60x60",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ottoicon.jpg",
+      "sizes": "72x72",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ottoicon.jpg",
+      "sizes": "76x76",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ottoicon.jpg",
+      "sizes": "114x114",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ottoicon.jpg",
+      "sizes": "120x120",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ottoicon.jpg",
+      "sizes": "144x144",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ottoicon.jpg",
+      "sizes": "152x152",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ottoicon.jpg",
+      "sizes": "180x180",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ottoicon.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ottoicon.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/ottomain.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "View your OTTO dashboard",
+      "url": "/dashboard",
+      "icons": [
+        {
+          "src": "/ottoicon.jpg",
+          "sizes": "192x192",
+          "type": "image/jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Profile",
+      "short_name": "Profile",
+      "description": "Manage your profile",
+      "url": "/profile",
+      "icons": [
+        {
+          "src": "/ottoicon.jpg",
+          "sizes": "192x192",
+          "type": "image/jpeg"
+        }
+      ]
+    }
+  ]
+} 
