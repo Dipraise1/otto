@@ -34,7 +34,7 @@ const Profile = () => {
     username: "@crypto_otter_pro",
     displayName: "Crypto Otter Pro",
     email: "otter.pro@example.com",
-    bio: "Professional meme token trader and OTTO enthusiast. Building the future of DeFi, one otter at a time! 🦦",
+    bio: "Professional meme token trader and OTTO enthusiast. Building the future of DeFi, one otter at a time!",
     twitter: "@cryptootterpro",
     telegram: "@cryptootterpro",
     walletAddress: "0x1234567890123456789012345678901234567890"
@@ -108,7 +108,7 @@ const Profile = () => {
                   <div className="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-cyan-400 rounded-full animate-pulse"></div>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-cyan-300 to-sky-200 bg-clip-text text-transparent tracking-wide">
+                  <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-cyan-300 to-sky-200 bg-clip-text text-transparent tracking-wide font-bubble">
                     OTTO
                   </span>
                   <span className="text-xs text-cyan-200/70 font-medium -mt-1">
@@ -231,7 +231,7 @@ const Profile = () => {
                 />
               </div>
               <div>
-                <h1 className="text-xl sm:text-2xl md:text-4xl font-bold bg-gradient-to-r from-cyan-300 to-sky-200 bg-clip-text text-transparent tracking-wide">
+                <h1 className="text-xl sm:text-2xl md:text-4xl font-bold bg-gradient-to-r from-cyan-300 to-sky-200 bg-clip-text text-transparent tracking-wide font-display">
                   User Profile
                 </h1>
                 <p className="text-cyan-200 text-xs sm:text-sm md:text-base font-medium">
@@ -497,12 +497,12 @@ const Profile = () => {
                 <CardContent className="p-4 sm:p-6 md:p-8 pt-0">
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     {[
-                      { title: 'First Referral', description: 'Made your first successful referral', icon: '🎯', earned: true, date: '2024-01-15' },
-                      { title: 'Rising Star', description: 'Reached 10 referrals', icon: '⭐', earned: true, date: '2024-01-28' },
-                      { title: 'Community Builder', description: 'Reached 25 referrals', icon: '🏗️', earned: true, date: '2024-02-10' },
-                      { title: 'Otter Elite', description: 'Joined the elite tier', icon: '💎', earned: true, date: '2024-02-20' },
-                      { title: 'Top Performer', description: 'Finish in top 10 of monthly leaderboard', icon: '🏆', earned: false, requirement: '3 more referrals' },
-                      { title: 'Otter Legend', description: 'Reach the legendary tier', icon: '👑', earned: false, requirement: '15 more referrals' }
+                          { title: 'First Referral', description: 'Made your first successful referral', icon: '•', earned: true, date: '2024-01-15' },
+    { title: 'Rising Star', description: 'Reached 10 referrals', icon: '•', earned: true, date: '2024-01-28' },
+                                              { title: 'Community Builder', description: 'Reached 25 referrals', icon: '•', earned: true, date: '2024-02-10' },
+                      { title: 'Otter Elite', description: 'Joined the elite tier', icon: '•', earned: true, date: '2024-02-20' },
+                                              { title: 'Top Performer', description: 'Finish in top 10 of monthly leaderboard', icon: '•', earned: false, requirement: '3 more referrals' },
+                        { title: 'Otter Legend', description: 'Reach the legendary tier', icon: '•', earned: false, requirement: '15 more referrals' }
                     ].map((achievement, index) => (
                       <div 
                         key={index}

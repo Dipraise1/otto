@@ -28,8 +28,10 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'serif': ['Playfair Display', 'serif'],
-				'sans': ['Inter', 'sans-serif'],
+				'sans': ['Nunito', 'Poppins', 'sans-serif'],
+				'display': ['Comfortaa', 'Fredoka', 'Nunito', 'sans-serif'],
+				'heading': ['Fredoka', 'Comfortaa', 'Nunito', 'sans-serif'],
+				'bubble': ['Comfortaa', 'Fredoka', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -121,6 +123,37 @@ export default {
 					'100%': {
 						transform: 'translateX(0%)'
 					}
+				},
+				'otto-surf': {
+					'0%': {
+						transform: 'translateY(0px) translateX(0px) rotate(0deg)'
+					},
+					'25%': {
+						transform: 'translateY(-15px) translateX(8px) rotate(2deg)'
+					},
+					'50%': {
+						transform: 'translateY(-8px) translateX(12px) rotate(0deg)'
+					},
+					'75%': {
+						transform: 'translateY(-20px) translateX(6px) rotate(-1deg)'
+					},
+					'100%': {
+						transform: 'translateY(0px) translateX(0px) rotate(0deg)'
+					}
+				},
+				'otto-surf-smooth': {
+					'0%': {
+						transform: 'translateY(0px) translateX(0px) rotate(0deg)'
+					},
+					'33%': {
+						transform: 'translateY(-12px) translateX(10px) rotate(1.5deg)'
+					},
+					'66%': {
+						transform: 'translateY(-5px) translateX(-8px) rotate(-1deg)'
+					},
+					'100%': {
+						transform: 'translateY(0px) translateX(0px) rotate(0deg)'
+					}
 				}
 			},
 			animation: {
@@ -128,7 +161,9 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'float': 'float 3s ease-in-out infinite',
 				'marquee': 'marquee 30s linear infinite',
-				'marquee-reverse': 'marquee-reverse 30s linear infinite'
+				'marquee-reverse': 'marquee-reverse 30s linear infinite',
+				'otto-surf': 'otto-surf 6s ease-in-out infinite',
+				'otto-surf-smooth': 'otto-surf-smooth 8s ease-in-out infinite'
 			}
 		}
 	},

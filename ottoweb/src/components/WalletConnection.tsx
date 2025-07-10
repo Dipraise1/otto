@@ -38,7 +38,7 @@ const WalletConnection = ({ onWalletConnected }: WalletConnectionProps) => {
   const copyWalletAddress = () => {
     if (connectedWallet) {
       navigator.clipboard.writeText(connectedWallet);
-      toast.success("Wallet address copied! 🦦");
+      toast.success("Wallet address copied!");
     }
   };
 
